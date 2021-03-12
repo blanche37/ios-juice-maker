@@ -6,6 +6,8 @@
 
 import Foundation
 
+typealias FruitCount = [Fruit: Int]
+
 enum Fruit {
     case strawberry, banana, pineapple, kiwi, mango
 }
@@ -13,14 +15,14 @@ enum Fruit {
 enum Juice {
     case strawberry, banana, kiwi, pineapple, strawberryBanana, mango, mangokiwi
 
-    var recipe: [Fruit: UInt] {
+    var recipe: FruitCount {
         switch self {
         case .strawberry:
             return [.strawberry: 16]
         case .banana:
             return [.banana: 2]
         case .kiwi:
-            return [.kiwi:3]
+            return [.kiwi: 3]
         case .pineapple:
             return [.pineapple: 2]
         case .strawberryBanana:
@@ -33,44 +35,51 @@ enum Juice {
     }
 }
 
-enum JuiceMakerErorr: Error {
+enum JuiceMakerError: Error {
     case outOfStock
 }
 
-struct Stock {
-    var fruits: [Fruit: UInt]
-    
-    init(initialAmount: UInt) {
-        fruits = [.strawberry: initialAmount, .banana: initialAmount, .kiwi: initialAmount, .pineapple: initialAmount, .mango: initialAmount]
+struct FruitStock: CustomStringConvertible {
+    private(set) var remainedFruit: FruitCount
+    var description: String {
+        return "\(remainedFruit)"
     }
     
-    mutating func addStock(of fruit: Fruit) {
-        if let storedFruit = fruits[fruit] {
-            fruits[fruit] = storedFruit + 1
+    init(initialCount: Int) {
+        remainedFruit = [.strawberry: initialCount, .banana: initialCount, .kiwi: initialCount, .pineapple: initialCount, .mango: initialCount]
+    }
+    
+    mutating func addStock(of fruit: Fruit, count: Int) {
+        if let storedFruit = remainedFruit[fruit] {
+            remainedFruit[fruit] = storedFruit + count
         }
     }
     
-    mutating func subtractStock(of fruit: Fruit) {
-        if let storedFruit = fruits[fruit] {
-            fruits[fruit] = storedFruit - 1
+    mutating func subtractStock(of fruit: Fruit, count: Int) {
+        if let storedFruit = remainedFruit[fruit] {
+            remainedFruit[fruit] = storedFruit - count
+        }
+    }
+    
+    func checkCount(of fruit: Fruit) -> Int {
+        if let storedFruit = remainedFruit[fruit] {
+            return storedFruit
+        } else {
+            return 0
         }
     }
 }
 
 class JuiceMaker {
-    var stock: Stock = Stock(initialAmount: 10)
+    var stock: FruitStock = FruitStock(initialCount: 10)
     
-    func makeJuice(using juice: Juice) {
+    func makeJuice(using juice: Juice) throws {
         for (ingredient, amount) in juice.recipe {
-            guard let storedFruit = stock.fruits[ingredient] else {
-                return
+            guard stock.checkCount(of: ingredient) > amount else {
+                throw JuiceMakerError.outOfStock
             }
             
-            if storedFruit > amount {
-                stock.fruits[ingredient] = storedFruit - amount
-            } else {
-                // 부족할 경우
-            }
+            stock.subtractStock(of: ingredient, count: amount)
         }
     }
 }
