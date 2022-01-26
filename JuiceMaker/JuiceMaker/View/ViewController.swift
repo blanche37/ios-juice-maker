@@ -9,12 +9,11 @@ import UIKit
 class ViewController: UIViewController {
     
     //MARK: - @IBOutlets
-    
-    @IBOutlet weak var strawberryCount: UILabel!
-    @IBOutlet weak var bananaCount: UILabel!
-    @IBOutlet weak var pineappleCount: UILabel!
-    @IBOutlet weak var kiwiCount: UILabel!
-    @IBOutlet weak var mangoCount: UILabel!
+    @IBOutlet weak var strawberryLabel: UILabel!
+    @IBOutlet weak var bananaLabel: UILabel!
+    @IBOutlet weak var pineappleLabel: UILabel!
+    @IBOutlet weak var kiwiLabel: UILabel!
+    @IBOutlet weak var mangoLabel: UILabel!
     
     @IBOutlet weak var orderStrawberryBananaJuiceButton: OrderJuiceButton!
     @IBOutlet weak var orderStrawberryJuiceButton: OrderJuiceButton!
@@ -26,7 +25,6 @@ class ViewController: UIViewController {
     var juiceMaker = JuiceMaker()
     
     //MARK: - LifeCycles
-
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeButtons()
@@ -38,12 +36,11 @@ class ViewController: UIViewController {
     }
     
     //MARK: - @IBActions
-
     @IBAction func moveStock(_ sender: Any) {
-        guard let stockVC = self.storyboard?.instantiateViewController(identifier: "stockVC") else {
+        guard let stockVC = self.storyboard?.instantiateViewController(identifier: "stockVC") as? StockViewController else {
             return
         }
-
+        stockVC.delegate = self
         self.present(stockVC, animated: false, completion: nil)
     }
     
@@ -57,7 +54,6 @@ class ViewController: UIViewController {
     }
 
     //MARK: - Methods
-
     func initializeButtons() {
         orderStrawberryJuiceButton.juice = .strawberry
         orderBananaJuiceButton.juice = .banana
@@ -69,12 +65,25 @@ class ViewController: UIViewController {
     }
     
     func updateFruitCount() {
-        strawberryCount.text = String(juiceMaker.readStock(of: .strawberry))
-        bananaCount.text = String(juiceMaker
+        strawberryLabel.text = String(juiceMaker.readStock(of: .strawberry))
+        bananaLabel.text = String(juiceMaker
                                     .readStock(of: .banana))
-        kiwiCount.text = String(juiceMaker.readStock(of: .kiwi))
-        pineappleCount.text = String(juiceMaker.readStock(of: .pineapple))
-        mangoCount.text = String(juiceMaker.readStock(of: .mango))
+        kiwiLabel.text = String(juiceMaker.readStock(of: .kiwi))
+        pineappleLabel.text = String(juiceMaker.readStock(of: .pineapple))
+        mangoLabel.text = String(juiceMaker.readStock(of: .mango))
     }
 }
 
+    //MARK: - SendDataProtocol
+extension ViewController: SendDataProtocol {
+    func sendData(strawberry: Int, banana: Int, pineapple: Int, kiwi: Int, mango: Int) {
+        FruitStock.shared.addStock(of: .strawberry, count: strawberry)
+        FruitStock.shared.addStock(of: .banana, count: banana)
+        FruitStock.shared.addStock(of: .pineapple, count: pineapple)
+        FruitStock.shared.addStock(of: .kiwi, count: kiwi)
+        FruitStock.shared.addStock(of: .mango, count: mango)
+        updateFruitCount()
+    }
+    
+    
+}

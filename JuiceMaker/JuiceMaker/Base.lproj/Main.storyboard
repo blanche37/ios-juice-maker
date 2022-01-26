@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8xy-oJ-TA3">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JuiceMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="wzz-3W-KLO">
-                                <rect key="frame" x="54" y="54" width="788" height="125"/>
+                                <rect key="frame" x="10" y="54" width="580" height="125"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strawberry" translatesAutoresizingMaskIntoConstraints="NO" id="Gkd-xq-wUY">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
@@ -28,28 +26,28 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banana" translatesAutoresizingMaskIntoConstraints="NO" id="Inl-jm-fVg">
-                                        <rect key="frame" x="166" y="0.0" width="125" height="125"/>
+                                        <rect key="frame" x="162" y="0.0" width="125" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="2E4-Wa-Alh"/>
                                             <constraint firstAttribute="height" constant="125" id="JUf-wX-pvD"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pine" translatesAutoresizingMaskIntoConstraints="NO" id="P0J-Jv-GGJ">
-                                        <rect key="frame" x="331.5" y="0.0" width="125" height="125"/>
+                                        <rect key="frame" x="324" y="0.0" width="125" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="57E-nG-sfJ"/>
                                             <constraint firstAttribute="height" constant="125" id="I1w-OM-lza"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kiwi" translatesAutoresizingMaskIntoConstraints="NO" id="4aU-yC-Mwl">
-                                        <rect key="frame" x="497.5" y="0.0" width="125" height="125"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="kiwi" translatesAutoresizingMaskIntoConstraints="NO" id="4aU-yC-Mwl">
+                                        <rect key="frame" x="486" y="0.0" width="0.0" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="l1d-of-AGe"/>
                                             <constraint firstAttribute="width" constant="125" id="m1w-Iv-sTZ"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mango" translatesAutoresizingMaskIntoConstraints="NO" id="vnx-eO-HHB">
-                                        <rect key="frame" x="663" y="0.0" width="125" height="125"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="mango" translatesAutoresizingMaskIntoConstraints="NO" id="vnx-eO-HHB">
+                                        <rect key="frame" x="523" y="0.0" width="57" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="6p3-JH-UgO"/>
                                             <constraint firstAttribute="width" constant="125" id="N9Z-3W-Rfk"/>
@@ -58,7 +56,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="1Yu-fK-I8S">
-                                <rect key="frame" x="54" y="189" width="788" height="50"/>
+                                <rect key="frame" x="10" y="189" width="580" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-gt-XFN">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
@@ -71,7 +69,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbz-dc-Ktc">
-                                        <rect key="frame" x="166" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="163" y="0.0" width="125" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="toa-gb-3H9"/>
@@ -81,7 +79,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Um5-92-aTG">
-                                        <rect key="frame" x="331.5" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="325.5" y="0.0" width="125" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="9v7-qv-lny"/>
@@ -91,7 +89,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghS-vv-UcU">
-                                        <rect key="frame" x="497.5" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="488.5" y="0.0" width="27" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="XB1-JM-DaD"/>
@@ -101,7 +99,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTj-sr-IKQ">
-                                        <rect key="frame" x="663" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="553" y="0.0" width="27" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="jos-LX-MPv"/>
@@ -114,10 +112,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="202" translatesAutoresizingMaskIntoConstraints="NO" id="wc0-BK-XV5">
-                                <rect key="frame" x="54" y="249" width="788" height="50"/>
+                                <rect key="frame" x="10" y="249" width="580" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCV-M7-W1O" customClass="OrderJuiceButton" customModule="JuiceMaker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="291" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="50"/>
                                         <color key="backgroundColor" red="0.46271654852096178" green="0.46358877336303161" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Fv0-gn-4V1"/>
@@ -130,7 +128,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcS-xf-6ln" customClass="OrderJuiceButton" customModule="JuiceMaker" customModuleProvider="target">
-                                        <rect key="frame" x="497.5" y="0.0" width="290.5" height="50"/>
+                                        <rect key="frame" x="488.5" y="0.0" width="91.5" height="50"/>
                                         <color key="backgroundColor" red="0.46271654852096178" green="0.46358877336303161" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="망키쥬스 주문">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,7 +140,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Kt5-Yf-A5e">
-                                <rect key="frame" x="54" y="309" width="788" height="50"/>
+                                <rect key="frame" x="10" y="309" width="580" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK8-og-7fr" customClass="OrderJuiceButton" customModule="JuiceMaker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
@@ -159,7 +157,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kt-tf-yIh" customClass="OrderJuiceButton" customModule="JuiceMaker" customModuleProvider="target">
-                                        <rect key="frame" x="166" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="157" y="0.0" width="125" height="50"/>
                                         <color key="backgroundColor" red="0.46271654852096178" green="0.46358877336303161" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="SAj-T3-5Gb"/>
@@ -172,7 +170,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPp-Df-Ur3" customClass="OrderJuiceButton" customModule="JuiceMaker" customModuleProvider="target">
-                                        <rect key="frame" x="331.5" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="314" y="0.0" width="125" height="50"/>
                                         <color key="backgroundColor" red="0.46271654852096178" green="0.46358877336303161" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="OCy-qm-int"/>
@@ -184,8 +182,8 @@
                                             <action selector="orderJuice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aK9-RG-iEq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqD-ol-OGW" customClass="OrderJuiceButton" customModule="JuiceMaker" customModuleProvider="target">
-                                        <rect key="frame" x="497.5" y="0.0" width="125" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqD-ol-OGW" customClass="OrderJuiceButton" customModule="JuiceMaker" customModuleProvider="target">
+                                        <rect key="frame" x="471" y="0.0" width="0.0" height="50"/>
                                         <color key="backgroundColor" red="0.46271654852096178" green="0.46358877336303161" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="y9f-KX-0Fa"/>
@@ -197,8 +195,8 @@
                                             <action selector="orderJuice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CVh-0m-75d"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDa-UI-Ozu" customClass="OrderJuiceButton" customModule="JuiceMaker" customModuleProvider="target">
-                                        <rect key="frame" x="663" y="0.0" width="125" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDa-UI-Ozu" customClass="OrderJuiceButton" customModule="JuiceMaker" customModuleProvider="target">
+                                        <rect key="frame" x="503" y="0.0" width="77" height="50"/>
                                         <color key="backgroundColor" red="0.46271654852096178" green="0.46358877336303161" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="et0-bS-4ea"/>
@@ -235,14 +233,14 @@
                     <navigationItem key="navigationItem" title="맛있는 쥬스를 만들어 드려요!" id="gRa-eP-KMK">
                         <barButtonItem key="rightBarButtonItem" title="재고 수정" id="dQ5-1w-n4C">
                             <connections>
-                                <action selector="moveStock:" destination="BYZ-38-t0r" id="J8A-hw-gZ7"/>
+                                <action selector="moveStock:" destination="BYZ-38-t0r" id="mtc-If-Tfn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bananaCount" destination="Gbz-dc-Ktc" id="ubV-8E-qmN"/>
-                        <outlet property="kiwiCount" destination="ghS-vv-UcU" id="lbO-6h-gkd"/>
-                        <outlet property="mangoCount" destination="cTj-sr-IKQ" id="jYo-h5-l8T"/>
+                        <outlet property="bananaLabel" destination="Gbz-dc-Ktc" id="ubV-8E-qmN"/>
+                        <outlet property="kiwiLabel" destination="ghS-vv-UcU" id="lbO-6h-gkd"/>
+                        <outlet property="mangoLabel" destination="cTj-sr-IKQ" id="jYo-h5-l8T"/>
                         <outlet property="orderBananaJuiceButton" destination="2Kt-tf-yIh" id="X4d-4d-uLi"/>
                         <outlet property="orderKiwiJuiceButton" destination="CqD-ol-OGW" id="7gR-1q-xDb"/>
                         <outlet property="orderMangoJuiceButton" destination="sDa-UI-Ozu" id="dij-dV-9Qx"/>
@@ -250,8 +248,8 @@
                         <outlet property="orderPineappleJuiceButton" destination="MPp-Df-Ur3" id="z93-jq-stb"/>
                         <outlet property="orderStrawberryBananaJuiceButton" destination="LCV-M7-W1O" id="yoo-0T-2Vz"/>
                         <outlet property="orderStrawberryJuiceButton" destination="cK8-og-7fr" id="Hrf-Yo-Daf"/>
-                        <outlet property="pineappleCount" destination="Um5-92-aTG" id="EMc-Ca-bG4"/>
-                        <outlet property="strawberryCount" destination="ddR-gt-XFN" id="GAc-HW-gc4"/>
+                        <outlet property="pineappleLabel" destination="Um5-92-aTG" id="EMc-Ca-bG4"/>
+                        <outlet property="strawberryLabel" destination="ddR-gt-XFN" id="GAc-HW-gc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -263,11 +261,11 @@
             <objects>
                 <viewController storyboardIdentifier="stockVC" id="OM7-Cs-7Nc" customClass="StockViewController" customModule="JuiceMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kEl-Sf-frr">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PxZ-8f-UoI">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="재고 추가" id="Yw6-li-niI">
                                         <barButtonItem key="rightBarButtonItem" title="닫기" id="6qo-p5-Jqe">
@@ -279,7 +277,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="lwo-Xg-Pcl">
-                                <rect key="frame" x="54" y="54" width="788" height="125"/>
+                                <rect key="frame" x="10" y="54" width="580" height="125"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strawberry" translatesAutoresizingMaskIntoConstraints="NO" id="Fvd-Vk-vHJ">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
@@ -289,28 +287,28 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banana" translatesAutoresizingMaskIntoConstraints="NO" id="EyH-hz-bPa">
-                                        <rect key="frame" x="166" y="0.0" width="125" height="125"/>
+                                        <rect key="frame" x="162" y="0.0" width="125" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="sUf-0h-frg"/>
                                             <constraint firstAttribute="width" constant="125" id="zcR-dW-jId"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pine" translatesAutoresizingMaskIntoConstraints="NO" id="D8G-m1-1hn">
-                                        <rect key="frame" x="331.5" y="0.0" width="125" height="125"/>
+                                        <rect key="frame" x="324" y="0.0" width="125" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="74B-Cp-njS"/>
                                             <constraint firstAttribute="width" constant="125" id="82H-bi-HaD"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kiwi" translatesAutoresizingMaskIntoConstraints="NO" id="b9R-Kl-Ozk">
-                                        <rect key="frame" x="497.5" y="0.0" width="125" height="125"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="kiwi" translatesAutoresizingMaskIntoConstraints="NO" id="b9R-Kl-Ozk">
+                                        <rect key="frame" x="486" y="0.0" width="57" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="ESu-7L-y7P"/>
                                             <constraint firstAttribute="width" constant="125" id="hug-k2-Vao"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mango" translatesAutoresizingMaskIntoConstraints="NO" id="NO6-UZ-0OW">
-                                        <rect key="frame" x="663" y="0.0" width="125" height="125"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="mango" translatesAutoresizingMaskIntoConstraints="NO" id="NO6-UZ-0OW">
+                                        <rect key="frame" x="580" y="0.0" width="0.0" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="Mn1-LA-if1"/>
                                             <constraint firstAttribute="height" constant="125" id="jo9-7t-aty"/>
@@ -319,7 +317,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="u99-JF-Aa8">
-                                <rect key="frame" x="54" y="189" width="788" height="50"/>
+                                <rect key="frame" x="10" y="189" width="580" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRv-iX-7ok">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
@@ -332,7 +330,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlB-uW-uXl">
-                                        <rect key="frame" x="166" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="162" y="0.0" width="125" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="1eU-TJ-Noc"/>
@@ -342,7 +340,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgP-I9-2Yo">
-                                        <rect key="frame" x="331.5" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="324" y="0.0" width="125" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="V4h-JI-xlf"/>
@@ -351,8 +349,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw6-iN-wmS">
-                                        <rect key="frame" x="497.5" y="0.0" width="125" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw6-iN-wmS">
+                                        <rect key="frame" x="486" y="0.0" width="41.5" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="agC-4z-H6N"/>
@@ -361,8 +359,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGT-Si-EGb">
-                                        <rect key="frame" x="663" y="0.0" width="125" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGT-Si-EGb">
+                                        <rect key="frame" x="564.5" y="0.0" width="15.5" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="a7q-49-HlL"/>
@@ -375,7 +373,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="9Hn-3s-p6g">
-                                <rect key="frame" x="54" y="249" width="788" height="50"/>
+                                <rect key="frame" x="10" y="249" width="580" height="50"/>
                                 <subviews>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="4so-Dw-sb3">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
@@ -387,25 +385,25 @@
                                         </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kbA-lY-pqk">
-                                        <rect key="frame" x="168" y="0.0" width="123" height="50"/>
+                                        <rect key="frame" x="168" y="0.0" width="119" height="50"/>
                                         <connections>
                                             <action selector="touchUpStepper:" destination="OM7-Cs-7Nc" eventType="valueChanged" id="6Ba-70-j9d"/>
                                         </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6Ef-Dg-s6x">
-                                        <rect key="frame" x="334" y="0.0" width="122.5" height="50"/>
+                                        <rect key="frame" x="330" y="0.0" width="119" height="50"/>
                                         <connections>
                                             <action selector="touchUpStepper:" destination="OM7-Cs-7Nc" eventType="valueChanged" id="HB1-AP-Ywd"/>
                                         </connections>
                                     </stepper>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="eEF-LR-vbb">
-                                        <rect key="frame" x="499.5" y="0.0" width="123" height="50"/>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="eEF-LR-vbb">
+                                        <rect key="frame" x="492" y="0.0" width="0.0" height="50"/>
                                         <connections>
                                             <action selector="touchUpStepper:" destination="OM7-Cs-7Nc" eventType="valueChanged" id="1J8-fQ-6c5"/>
                                         </connections>
                                     </stepper>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lpQ-ok-WCA">
-                                        <rect key="frame" x="665.5" y="0.0" width="122.5" height="50"/>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lpQ-ok-WCA">
+                                        <rect key="frame" x="535" y="0.0" width="45" height="50"/>
                                         <connections>
                                             <action selector="touchUpStepper:" destination="OM7-Cs-7Nc" eventType="valueChanged" id="kNS-D9-iTP"/>
                                         </connections>
@@ -435,22 +433,23 @@
                             <constraint firstItem="u99-JF-Aa8" firstAttribute="top" secondItem="lwo-Xg-Pcl" secondAttribute="bottom" constant="10" id="ujP-Ix-irn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tOA-KH-yDe"/>
                     <connections>
-                        <outlet property="bananaCount" destination="YlB-uW-uXl" id="JCE-Qs-B8Z"/>
+                        <outlet property="bananaLabel" destination="YlB-uW-uXl" id="JCE-Qs-B8Z"/>
                         <outlet property="bananaStepper" destination="kbA-lY-pqk" id="HcY-9Q-KAw"/>
-                        <outlet property="kiwiCount" destination="hw6-iN-wmS" id="N8t-bx-6sL"/>
+                        <outlet property="kiwiLabel" destination="hw6-iN-wmS" id="N8t-bx-6sL"/>
                         <outlet property="kiwiStepper" destination="eEF-LR-vbb" id="Xd9-11-pqQ"/>
-                        <outlet property="mangoCount" destination="TGT-Si-EGb" id="7XD-Em-eZp"/>
+                        <outlet property="mangoLabel" destination="TGT-Si-EGb" id="7XD-Em-eZp"/>
                         <outlet property="mangoStepper" destination="lpQ-ok-WCA" id="79n-Lh-MHi"/>
-                        <outlet property="pineappleCount" destination="lgP-I9-2Yo" id="A8s-Kk-aoW"/>
+                        <outlet property="pineappleLabel" destination="lgP-I9-2Yo" id="A8s-Kk-aoW"/>
                         <outlet property="pineappleStepper" destination="6Ef-Dg-s6x" id="4ZI-bV-UsV"/>
-                        <outlet property="strawberryCount" destination="yRv-iX-7ok" id="3TY-LZ-v72"/>
+                        <outlet property="strawberryLabel" destination="yRv-iX-7ok" id="3TY-LZ-v72"/>
                         <outlet property="strawberryStepper" destination="4so-Dw-sb3" id="4Ip-2r-pnz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdx-1P-k5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-775.44642857142856" y="1302.8985507246377"/>
+            <point key="canvasLocation" x="-782" y="1454"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PCB-7T-tce">

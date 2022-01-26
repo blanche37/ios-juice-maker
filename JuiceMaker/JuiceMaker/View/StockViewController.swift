@@ -14,11 +14,13 @@ class StockViewController: UIViewController {
     @IBOutlet weak var kiwiStepper: UIStepper!
     @IBOutlet weak var mangoStepper: UIStepper!
     
-    @IBOutlet weak var strawberryCount: UILabel!
-    @IBOutlet weak var bananaCount: UILabel!
-    @IBOutlet weak var pineappleCount: UILabel!
-    @IBOutlet weak var kiwiCount: UILabel!
-    @IBOutlet weak var mangoCount: UILabel!
+    @IBOutlet weak var strawberryLabel: UILabel!
+    @IBOutlet weak var bananaLabel: UILabel!
+    @IBOutlet weak var pineappleLabel: UILabel!
+    @IBOutlet weak var kiwiLabel: UILabel!
+    @IBOutlet weak var mangoLabel: UILabel!
+    
+    weak var delegate: SendDataProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,14 @@ class StockViewController: UIViewController {
     }
     
     @IBAction func touchUpClosedButton(_ sender: Any) {
+        guard let strawberry = strawberryLabel.text.flatMap({ Int($0)} ),
+              let banana = bananaLabel.text.flatMap({ Int($0)} ),
+              let pineapple = pineappleLabel.text.flatMap({ Int($0)} ),
+              let kiwi = kiwiLabel.text.flatMap({ Int($0)} ),
+              let mango = mangoLabel.text.flatMap({ Int($0)} ) else {
+                  return
+              }
+        self.delegate?.sendData(strawberry: strawberry, banana: banana, pineapple: pineapple, kiwi: kiwi, mango: mango)
         self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
@@ -45,15 +55,15 @@ class StockViewController: UIViewController {
     @IBAction func touchUpStepper(_ sender: UIStepper) {
         switch sender {
         case strawberryStepper:
-            strawberryCount.text = String(Int(sender.value))
+            strawberryLabel.text = String(Int(sender.value))
         case bananaStepper:
-            bananaCount.text = String(Int(sender.value))
+            bananaLabel.text = String(Int(sender.value))
         case pineappleStepper:
-            pineappleCount.text = String(Int(sender.value))
+            pineappleLabel.text = String(Int(sender.value))
         case kiwiStepper:
-            kiwiCount.text = String(Int(sender.value))
+            kiwiLabel.text = String(Int(sender.value))
         case mangoStepper:
-            mangoCount.text = String(Int(sender.value))
+            mangoLabel.text = String(Int(sender.value))
         default:
             break
         }
