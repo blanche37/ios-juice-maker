@@ -94,6 +94,14 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		43E26D4E27A1C7BA00C4F39B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				43E26D4C27A1B4ED00C4F39B /* SendDataProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		C73DAF2A255D0CDC00020D38 = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +125,8 @@
 				43E26D4127A1A81700C4F39B /* View */,
 				43E26D4227A1A83E00C4F39B /* Model */,
 				43E26D4527A1A88000C4F39B /* Error */,
+				43E26D4E27A1C7BA00C4F39B /* Protocol */,
 				C73DAF3C255D0CDD00020D38 /* Main.storyboard */,
-				43E26D4C27A1B4ED00C4F39B /* SendDataProtocol.swift */,
 				C73DAF3F255D0CDE00020D38 /* Assets.xcassets */,
 				C73DAF41255D0CDF00020D38 /* LaunchScreen.storyboard */,
 				C73DAF44255D0CDF00020D38 /* Info.plist */,
