@@ -17,4 +17,6 @@ class StockViewController: UIViewController {
     @IBAction func touchUpClosedButton(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
+    
+    
 }
