@@ -22,7 +22,7 @@ class JuiceMaker {
         }
     }
     
-    func readStock(of fruit: Fruit) -> UInt {
+    func readStock(of fruit: Fruit) -> Int {
         return stock.readCount(of: fruit)
     }
 }

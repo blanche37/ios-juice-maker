@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias FruitCount = [Fruit: UInt]
+typealias FruitCount = [Fruit: Int]
 
 enum Fruit {
     case strawberry, banana, pineapple, kiwi, mango

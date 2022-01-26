@@ -10,23 +10,23 @@ import Foundation
 struct FruitStock {
     private var remainedFruit: FruitCount
     
-    init(initialCount: UInt) {
+    init(initialCount: Int) {
         remainedFruit = [.strawberry: initialCount, .banana: initialCount, .kiwi: initialCount, .pineapple: initialCount, .mango: initialCount]
     }
     
-    mutating func addStock(of fruit: Fruit, count: UInt) {
+    mutating func addStock(of fruit: Fruit, count: Int) {
         if let storedFruit = remainedFruit[fruit] {
             remainedFruit[fruit] = storedFruit + count
         }
     }
     
-    mutating func subtractStock(of fruit: Fruit, count: UInt) {
+    mutating func subtractStock(of fruit: Fruit, count: Int) {
         if let storedFruit = remainedFruit[fruit] {
             remainedFruit[fruit] = storedFruit - count
         }
     }
     
-    func readCount(of fruit: Fruit) -> UInt {
+    func readCount(of fruit: Fruit) -> Int {
         if let storedFruit = remainedFruit[fruit] {
             return storedFruit
         } else {
