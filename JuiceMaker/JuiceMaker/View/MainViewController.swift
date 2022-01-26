@@ -6,7 +6,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     //MARK: - @IBOutlets
     @IBOutlet weak var strawberryLabel: UILabel!
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     //MARK: - @IBActions
     @IBAction func moveStock(_ sender: Any) {
-        guard let stockVC = self.storyboard?.instantiateViewController(identifier: "stockVC") as? StockViewController else {
+        guard let stockVC = self.storyboard?.instantiateViewController(identifier: "stockVC") as? StockManagementViewController else {
             return
         }
         stockVC.delegate = self
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
 }
 
     //MARK: - SendDataProtocol
-extension ViewController: SendDataProtocol {
+extension MainViewController: SendDataProtocol {
     func sendData(strawberry: Int, banana: Int, pineapple: Int, kiwi: Int, mango: Int) {
         FruitStock.shared.addStock(of: .strawberry, count: strawberry)
         FruitStock.shared.addStock(of: .banana, count: banana)

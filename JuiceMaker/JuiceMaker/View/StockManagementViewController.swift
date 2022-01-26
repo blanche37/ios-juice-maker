@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StockViewController: UIViewController {
+class StockManagementViewController: UIViewController {
     @IBOutlet weak var strawberryStepper: UIStepper!
     @IBOutlet weak var bananaStepper: UIStepper!
     @IBOutlet weak var pineappleStepper: UIStepper!
