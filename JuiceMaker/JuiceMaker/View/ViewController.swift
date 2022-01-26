@@ -8,7 +8,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //MARK:-- @IBOutlet Properties
+    //MARK: - @IBOutlets
     
     @IBOutlet weak var strawberryCount: UILabel!
     @IBOutlet weak var bananaCount: UILabel!
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var orderMangoJuiceButton: OrderJuiceButton!
     var juiceMaker = JuiceMaker()
     
-    //MARK:-- Override function
+    //MARK: - LifeCycles
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         updateFruitCount()
     }
     
-    //MARK:-- @IBAction Function
+    //MARK: - @IBActions
 
     @IBAction func moveStock(_ sender: Any) {
         guard let stockVC = self.storyboard?.instantiateViewController(identifier: "stockVC") else {
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         updateFruitCount()
     }
 
-    //MARK:-- function
+    //MARK: - Methods
 
     func initializeButtons() {
         orderStrawberryJuiceButton.juice = .strawberry
