@@ -382,18 +382,33 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="yuk-mS-rfh"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="touchUpStepper:" destination="OM7-Cs-7Nc" eventType="valueChanged" id="6R1-jc-BOR"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kbA-lY-pqk">
                                         <rect key="frame" x="168" y="0.0" width="123" height="50"/>
+                                        <connections>
+                                            <action selector="touchUpStepper:" destination="OM7-Cs-7Nc" eventType="valueChanged" id="6Ba-70-j9d"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6Ef-Dg-s6x">
                                         <rect key="frame" x="334" y="0.0" width="122.5" height="50"/>
+                                        <connections>
+                                            <action selector="touchUpStepper:" destination="OM7-Cs-7Nc" eventType="valueChanged" id="HB1-AP-Ywd"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="eEF-LR-vbb">
                                         <rect key="frame" x="499.5" y="0.0" width="123" height="50"/>
+                                        <connections>
+                                            <action selector="touchUpStepper:" destination="OM7-Cs-7Nc" eventType="valueChanged" id="1J8-fQ-6c5"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lpQ-ok-WCA">
                                         <rect key="frame" x="665.5" y="0.0" width="122.5" height="50"/>
+                                        <connections>
+                                            <action selector="touchUpStepper:" destination="OM7-Cs-7Nc" eventType="valueChanged" id="kNS-D9-iTP"/>
+                                        </connections>
                                     </stepper>
                                 </subviews>
                             </stackView>
@@ -420,6 +435,18 @@
                             <constraint firstItem="u99-JF-Aa8" firstAttribute="top" secondItem="lwo-Xg-Pcl" secondAttribute="bottom" constant="10" id="ujP-Ix-irn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bananaCount" destination="YlB-uW-uXl" id="JCE-Qs-B8Z"/>
+                        <outlet property="bananaStepper" destination="kbA-lY-pqk" id="HcY-9Q-KAw"/>
+                        <outlet property="kiwiCount" destination="hw6-iN-wmS" id="N8t-bx-6sL"/>
+                        <outlet property="kiwiStepper" destination="eEF-LR-vbb" id="Xd9-11-pqQ"/>
+                        <outlet property="mangoCount" destination="TGT-Si-EGb" id="7XD-Em-eZp"/>
+                        <outlet property="mangoStepper" destination="lpQ-ok-WCA" id="79n-Lh-MHi"/>
+                        <outlet property="pineappleCount" destination="lgP-I9-2Yo" id="A8s-Kk-aoW"/>
+                        <outlet property="pineappleStepper" destination="6Ef-Dg-s6x" id="4ZI-bV-UsV"/>
+                        <outlet property="strawberryCount" destination="yRv-iX-7ok" id="3TY-LZ-v72"/>
+                        <outlet property="strawberryStepper" destination="4so-Dw-sb3" id="4Ip-2r-pnz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdx-1P-k5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

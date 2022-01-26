@@ -65,10 +65,10 @@
 		43E26D4127A1A81700C4F39B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C73DAF3A255D0CDD00020D38 /* ViewController.swift */,
-				526A13C92604857400EABE5B /* OrderAlertController.swift */,
-				C386F776260491F200D7038F /* StockViewController.swift */,
 				C386F7702604809100D7038F /* OrderJuiceButton.swift */,
+				526A13C92604857400EABE5B /* OrderAlertController.swift */,
+				C73DAF3A255D0CDD00020D38 /* ViewController.swift */,
+				C386F776260491F200D7038F /* StockViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
