@@ -11,24 +11,24 @@ struct FruitStock {
     private var remainedFruit: FruitCount
     
     init(initialCount: UInt) {
-        remainedFruit = [.strawberry: FruitInformation(count: initialCount), .banana: FruitInformation(count: initialCount), .kiwi: FruitInformation(count: initialCount), .pineapple: FruitInformation(count: initialCount), .mango: FruitInformation(count: initialCount)]
+        remainedFruit = [.strawberry: initialCount, .banana: initialCount, .kiwi: initialCount, .pineapple: initialCount, .mango: initialCount]
     }
     
     mutating func addStock(of fruit: Fruit, count: UInt) {
         if let storedFruit = remainedFruit[fruit] {
-            remainedFruit[fruit]?.count = storedFruit.count + count
+            remainedFruit[fruit] = storedFruit + count
         }
     }
     
     mutating func subtractStock(of fruit: Fruit, count: UInt) {
         if let storedFruit = remainedFruit[fruit] {
-            remainedFruit[fruit]?.count = storedFruit.count - count
+            remainedFruit[fruit] = storedFruit - count
         }
     }
     
     func readCount(of fruit: Fruit) -> UInt {
         if let storedFruit = remainedFruit[fruit] {
-            return storedFruit.count
+            return storedFruit
         } else {
             return 0
         }

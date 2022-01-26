@@ -19,19 +19,19 @@ enum Juice: String {
     var recipe: FruitCount {
         switch self {
         case .strawberry:
-            return [.strawberry: FruitInformation(count: 16)]
+            return [.strawberry: 16]
         case .banana:
-            return [.banana: FruitInformation(count: 2)]
+            return [.banana: 2]
         case .kiwi:
-            return [.kiwi: FruitInformation(count: 3)]
+            return [.kiwi: 3]
         case .pineapple:
-            return [.pineapple: FruitInformation(count: 2)]
+            return [.pineapple: 2]
         case .strawberryBanana:
-            return [.strawberry: FruitInformation(count: 10), .banana: FruitInformation(count: 1)]
+            return [.strawberry: 10, .banana: 1]
         case .mango:
-            return [.mango: FruitInformation(count: 3)]
+            return [.mango: 3]
         case .mangokiwi:
-            return [.mango: FruitInformation(count: 2), .kiwi: FruitInformation(count: 1)]
+            return [.mango: 2, .kiwi: 1]
         }
     }
 }

@@ -7,11 +7,7 @@
 
 import Foundation
 
-typealias FruitCount = [Fruit: FruitInformation]
-
-struct FruitInformation {
-    var count: UInt
-}
+typealias FruitCount = [Fruit: UInt]
 
 enum Fruit {
     case strawberry, banana, pineapple, kiwi, mango
