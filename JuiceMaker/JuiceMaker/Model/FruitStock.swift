@@ -8,11 +8,13 @@
 import Foundation
 
 class FruitStock {
-    private var remainedFruit: FruitCount
+    private var remainedFruit: FruitCount = [:]
     static let shared = FruitStock(initialCount: 10)
     
     private init(initialCount: Int) {
-        remainedFruit = [.strawberry: initialCount, .banana: initialCount, .kiwi: initialCount, .pineapple: initialCount, .mango: initialCount]
+        for fruit in Fruit.allCases {
+            remainedFruit.updateValue(initialCount, forKey: fruit)
+        }
     }
     
     func addStock(of fruit: Fruit, count: Int) {
