@@ -7,20 +7,21 @@
 
 import Foundation
 
-struct FruitStock {
+class FruitStock {
     private var remainedFruit: FruitCount
+    static let shared = FruitStock(initialCount: 10)
     
-    init(initialCount: Int) {
+    private init(initialCount: Int) {
         remainedFruit = [.strawberry: initialCount, .banana: initialCount, .kiwi: initialCount, .pineapple: initialCount, .mango: initialCount]
     }
     
-    mutating func addStock(of fruit: Fruit, count: Int) {
+    func addStock(of fruit: Fruit, count: Int) {
         if let storedFruit = remainedFruit[fruit] {
             remainedFruit[fruit] = storedFruit + count
         }
     }
     
-    mutating func subtractStock(of fruit: Fruit, count: Int) {
+    func subtractStock(of fruit: Fruit, count: Int) {
         if let storedFruit = remainedFruit[fruit] {
             remainedFruit[fruit] = storedFruit - count
         }

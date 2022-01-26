@@ -6,23 +6,18 @@
 
 import Foundation
 
-class JuiceMaker {
-    private var stock: FruitStock = FruitStock(initialCount: 10)
-    static let shared = JuiceMaker()
-    
-    private init() { }
-    
+struct JuiceMaker {
     func makeJuice(using juice: Juice) throws {
         for (ingredient, information) in juice.recipe {
-            guard stock.readCount(of: ingredient) >=  information else {
+            guard FruitStock.shared.readCount(of: ingredient) >=  information else {
                 throw JuiceMakerError.outOfStock
             }
             
-            stock.subtractStock(of: ingredient, count: information)
+            FruitStock.shared.subtractStock(of: ingredient, count: information)
         }
     }
     
     func readStock(of fruit: Fruit) -> Int {
-        return stock.readCount(of: fruit)
+        return FruitStock.shared.readCount(of: fruit)
     }
 }

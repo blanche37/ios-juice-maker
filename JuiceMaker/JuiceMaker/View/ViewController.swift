@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var orderMangoKiwiJuiceButton: OrderJuiceButton!
     @IBOutlet weak var orderKiwiJuiceButton: OrderJuiceButton!
     @IBOutlet weak var orderMangoJuiceButton: OrderJuiceButton!
+    var juiceMaker = JuiceMaker()
     
     //MARK:-- Override function
 
@@ -68,12 +69,12 @@ class ViewController: UIViewController {
     }
     
     func updateFruitCount() {
-        strawberryCount.text = String(JuiceMaker.shared.readStock(of: .strawberry))
-        bananaCount.text = String(JuiceMaker.shared
+        strawberryCount.text = String(juiceMaker.readStock(of: .strawberry))
+        bananaCount.text = String(juiceMaker
                                     .readStock(of: .banana))
-        kiwiCount.text = String(JuiceMaker.shared.readStock(of: .kiwi))
-        pineappleCount.text = String(JuiceMaker.shared.readStock(of: .pineapple))
-        mangoCount.text = String(JuiceMaker.shared.readStock(of: .mango))
+        kiwiCount.text = String(juiceMaker.readStock(of: .kiwi))
+        pineappleCount.text = String(juiceMaker.readStock(of: .pineapple))
+        mangoCount.text = String(juiceMaker.readStock(of: .mango))
     }
 }
 
