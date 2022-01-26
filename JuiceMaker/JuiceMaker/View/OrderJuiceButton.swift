@@ -9,7 +9,7 @@ import UIKit
 
 class OrderJuiceButton: UIButton {
     var juice: Juice?
-    var juiceMaker = JuiceMaker()
+    private let juiceMaker = JuiceMaker()
     
     func make(using juice: Juice) -> UIAlertController {
         let alert = OrderAlertController()

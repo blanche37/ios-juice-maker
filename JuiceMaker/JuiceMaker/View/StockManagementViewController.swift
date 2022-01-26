@@ -39,7 +39,7 @@ class StockManagementViewController: UIViewController {
         self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
-    func setUpStepper() {
+    private func setUpStepper() {
         let arr = [strawberryStepper, bananaStepper, pineappleStepper, kiwiStepper, mangoStepper]
         for stepper in arr {
             guard let stepper = stepper else {

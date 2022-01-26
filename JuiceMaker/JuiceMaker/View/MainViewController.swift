@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
         guard let stockVC = self.storyboard?.instantiateViewController(identifier: "stockVC") as? StockManagementViewController else {
             return
         }
+        
         stockVC.delegate = self
         self.present(stockVC, animated: false, completion: nil)
     }
@@ -48,13 +49,14 @@ class MainViewController: UIViewController {
         guard let juice = sender.juice else {
             return
         }
+        
         let alert = sender.make(using: juice)
         self.present(alert, animated: true, completion: nil)
         updateFruitCount()
     }
 
     //MARK: - Methods
-    func initializeButtons() {
+    private func initializeButtons() {
         orderStrawberryJuiceButton.juice = .strawberry
         orderBananaJuiceButton.juice = .banana
         orderStrawberryBananaJuiceButton.juice = .strawberryBanana
@@ -64,7 +66,7 @@ class MainViewController: UIViewController {
         orderPineappleJuiceButton.juice = .pineapple
     }
     
-    func updateFruitCount() {
+    private func updateFruitCount() {
         strawberryLabel.text = String(juiceMaker.readStock(of: .strawberry))
         bananaLabel.text = String(juiceMaker
                                     .readStock(of: .banana))
