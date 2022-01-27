@@ -8,6 +8,7 @@
 import UIKit
 
 class StockManagementViewController: UIViewController {
+    // MARK: - @IBOutlets
     @IBOutlet private weak var strawberryStepper: UIStepper!
     @IBOutlet private weak var bananaStepper: UIStepper!
     @IBOutlet private weak var pineappleStepper: UIStepper!
@@ -20,13 +21,16 @@ class StockManagementViewController: UIViewController {
     @IBOutlet private weak var kiwiLabel: UILabel!
     @IBOutlet private weak var mangoLabel: UILabel!
     
+    // MARK: - Properties
     weak var delegate: SendDataProtocol?
     
+    // MARK: - LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpStepper()
     }
     
+    // MARK: - @IBActions
     @IBAction private func touchUpClosedButton(_ sender: Any) {
         guard let strawberry = strawberryLabel.text.flatMap({ Int($0) }),
               let banana = bananaLabel.text.flatMap({ Int($0) }),
@@ -37,18 +41,6 @@ class StockManagementViewController: UIViewController {
               }
         self.delegate?.sendData(strawberry: strawberry, banana: banana, pineapple: pineapple, kiwi: kiwi, mango: mango)
         self.presentingViewController?.dismiss(animated: false, completion: nil)
-    }
-    
-    private func setUpStepper() {
-        let arr = [strawberryStepper, bananaStepper, pineappleStepper, kiwiStepper, mangoStepper]
-        for stepper in arr {
-            guard let stepper = stepper else {
-                return
-            }
-            stepper.wraps = true
-            stepper.autorepeat = true
-            stepper.maximumValue = 100
-        }
     }
     
     @IBAction private func touchUpStepper(_ sender: UIStepper) {
@@ -68,4 +60,16 @@ class StockManagementViewController: UIViewController {
         }
     }
     
+    // MARK: - Methods
+    private func setUpStepper() {
+        let arr = [strawberryStepper, bananaStepper, pineappleStepper, kiwiStepper, mangoStepper]
+        for stepper in arr {
+            guard let stepper = stepper else {
+                return
+            }
+            stepper.wraps = true
+            stepper.autorepeat = true
+            stepper.maximumValue = 100
+        }
+    }
 }
