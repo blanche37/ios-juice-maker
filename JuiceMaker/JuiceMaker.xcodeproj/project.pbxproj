@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		433011E127A32320002B01E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 433011E027A3231F002B01E2 /* .swiftlint.yml */; };
 		43E26D4427A1A87600C4F39B /* JuiceMakerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E26D4327A1A87600C4F39B /* JuiceMakerError.swift */; };
 		43E26D4727A1A8A600C4F39B /* FruitStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E26D4627A1A8A600C4F39B /* FruitStock.swift */; };
 		43E26D4927A1A9B900C4F39B /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E26D4827A1A9B900C4F39B /* Fruit.swift */; };
 		43E26D4B27A1A9BE00C4F39B /* Juice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E26D4A27A1A9BE00C4F39B /* Juice.swift */; };
 		43E26D4D27A1B4ED00C4F39B /* SendDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E26D4C27A1B4ED00C4F39B /* SendDataProtocol.swift */; };
 		526A13CA2604857400EABE5B /* OrderAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A13C92604857400EABE5B /* OrderAlertController.swift */; };
+		9533C55F9C4834394F65AE76 /* libPods-JuiceMaker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1EE00499D4C10F45F6C594 /* libPods-JuiceMaker.a */; };
 		C386F7712604809100D7038F /* OrderJuiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386F7702604809100D7038F /* OrderJuiceButton.swift */; };
 		C386F777260491F200D7038F /* StockManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386F776260491F200D7038F /* StockManagementViewController.swift */; };
 		C73DAF37255D0CDD00020D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DAF36255D0CDD00020D38 /* AppDelegate.swift */; };
@@ -25,12 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		433011E027A3231F002B01E2 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		43E26D4327A1A87600C4F39B /* JuiceMakerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerError.swift; sourceTree = "<group>"; };
 		43E26D4627A1A8A600C4F39B /* FruitStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStock.swift; sourceTree = "<group>"; };
 		43E26D4827A1A9B900C4F39B /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		43E26D4A27A1A9BE00C4F39B /* Juice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Juice.swift; sourceTree = "<group>"; };
 		43E26D4C27A1B4ED00C4F39B /* SendDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDataProtocol.swift; sourceTree = "<group>"; };
+		454C8DF24EB78B03F70A7E2D /* Pods-JuiceMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuiceMaker.release.xcconfig"; path = "Target Support Files/Pods-JuiceMaker/Pods-JuiceMaker.release.xcconfig"; sourceTree = "<group>"; };
 		526A13C92604857400EABE5B /* OrderAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAlertController.swift; sourceTree = "<group>"; };
+		9399619536FE6A44D1524B06 /* Pods-JuiceMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuiceMaker.debug.xcconfig"; path = "Target Support Files/Pods-JuiceMaker/Pods-JuiceMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		AB1EE00499D4C10F45F6C594 /* libPods-JuiceMaker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JuiceMaker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C386F7702604809100D7038F /* OrderJuiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderJuiceButton.swift; sourceTree = "<group>"; };
 		C386F776260491F200D7038F /* StockManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockManagementViewController.swift; sourceTree = "<group>"; };
 		C73DAF33255D0CDD00020D38 /* JuiceMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JuiceMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9533C55F9C4834394F65AE76 /* libPods-JuiceMaker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,11 +109,23 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		7819204F7B1D14F6EE294F78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9399619536FE6A44D1524B06 /* Pods-JuiceMaker.debug.xcconfig */,
+				454C8DF24EB78B03F70A7E2D /* Pods-JuiceMaker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C73DAF2A255D0CDC00020D38 = {
 			isa = PBXGroup;
 			children = (
+				433011E027A3231F002B01E2 /* .swiftlint.yml */,
 				C73DAF35255D0CDD00020D38 /* JuiceMaker */,
 				C73DAF34255D0CDD00020D38 /* Products */,
+				7819204F7B1D14F6EE294F78 /* Pods */,
+				FC0473DCEDF3F9D16DA2639D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +153,14 @@
 			path = JuiceMaker;
 			sourceTree = "<group>";
 		};
+		FC0473DCEDF3F9D16DA2639D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB1EE00499D4C10F45F6C594 /* libPods-JuiceMaker.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C73DAF47255D0CDF00020D38 /* Build configuration list for PBXNativeTarget "JuiceMaker" */;
 			buildPhases = (
+				1A242285DB3CE8E3216C86F7 /* [CP] Check Pods Manifest.lock */,
 				C73DAF2F255D0CDC00020D38 /* Sources */,
 				C73DAF30255D0CDC00020D38 /* Frameworks */,
 				C73DAF31255D0CDC00020D38 /* Resources */,
+				43BFD75727A322C9006A724E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -191,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433011E127A32320002B01E2 /* .swiftlint.yml in Resources */,
 				C73DAF43255D0CDF00020D38 /* LaunchScreen.storyboard in Resources */,
 				C73DAF40255D0CDE00020D38 /* Assets.xcassets in Resources */,
 				C73DAF3E255D0CDD00020D38 /* Main.storyboard in Resources */,
@@ -198,6 +228,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A242285DB3CE8E3216C86F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JuiceMaker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43BFD75727A322C9006A724E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C73DAF2F255D0CDC00020D38 /* Sources */ = {
@@ -359,6 +431,7 @@
 		};
 		C73DAF48255D0CDF00020D38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9399619536FE6A44D1524B06 /* Pods-JuiceMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -377,6 +450,7 @@
 		};
 		C73DAF49255D0CDF00020D38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 454C8DF24EB78B03F70A7E2D /* Pods-JuiceMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

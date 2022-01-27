@@ -8,17 +8,17 @@
 import UIKit
 
 class StockManagementViewController: UIViewController {
-    @IBOutlet weak var strawberryStepper: UIStepper!
-    @IBOutlet weak var bananaStepper: UIStepper!
-    @IBOutlet weak var pineappleStepper: UIStepper!
-    @IBOutlet weak var kiwiStepper: UIStepper!
-    @IBOutlet weak var mangoStepper: UIStepper!
+    @IBOutlet private weak var strawberryStepper: UIStepper!
+    @IBOutlet private weak var bananaStepper: UIStepper!
+    @IBOutlet private weak var pineappleStepper: UIStepper!
+    @IBOutlet private weak var kiwiStepper: UIStepper!
+    @IBOutlet private weak var mangoStepper: UIStepper!
     
-    @IBOutlet weak var strawberryLabel: UILabel!
-    @IBOutlet weak var bananaLabel: UILabel!
-    @IBOutlet weak var pineappleLabel: UILabel!
-    @IBOutlet weak var kiwiLabel: UILabel!
-    @IBOutlet weak var mangoLabel: UILabel!
+    @IBOutlet private weak var strawberryLabel: UILabel!
+    @IBOutlet private weak var bananaLabel: UILabel!
+    @IBOutlet private weak var pineappleLabel: UILabel!
+    @IBOutlet private weak var kiwiLabel: UILabel!
+    @IBOutlet private weak var mangoLabel: UILabel!
     
     weak var delegate: SendDataProtocol?
     
@@ -27,12 +27,12 @@ class StockManagementViewController: UIViewController {
         setUpStepper()
     }
     
-    @IBAction func touchUpClosedButton(_ sender: Any) {
-        guard let strawberry = strawberryLabel.text.flatMap({ Int($0)} ),
-              let banana = bananaLabel.text.flatMap({ Int($0)} ),
-              let pineapple = pineappleLabel.text.flatMap({ Int($0)} ),
-              let kiwi = kiwiLabel.text.flatMap({ Int($0)} ),
-              let mango = mangoLabel.text.flatMap({ Int($0)} ) else {
+    @IBAction private func touchUpClosedButton(_ sender: Any) {
+        guard let strawberry = strawberryLabel.text.flatMap({ Int($0) }),
+              let banana = bananaLabel.text.flatMap({ Int($0) }),
+              let pineapple = pineappleLabel.text.flatMap({ Int($0) }),
+              let kiwi = kiwiLabel.text.flatMap({ Int($0) }),
+              let mango = mangoLabel.text.flatMap({ Int($0) }) else {
                   return
               }
         self.delegate?.sendData(strawberry: strawberry, banana: banana, pineapple: pineapple, kiwi: kiwi, mango: mango)
@@ -51,8 +51,7 @@ class StockManagementViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func touchUpStepper(_ sender: UIStepper) {
+    @IBAction private func touchUpStepper(_ sender: UIStepper) {
         switch sender {
         case strawberryStepper:
             strawberryLabel.text = String(Int(sender.value))

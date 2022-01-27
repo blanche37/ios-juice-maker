@@ -8,23 +8,23 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    //MARK: - @IBOutlets
-    @IBOutlet weak var strawberryLabel: UILabel!
-    @IBOutlet weak var bananaLabel: UILabel!
-    @IBOutlet weak var pineappleLabel: UILabel!
-    @IBOutlet weak var kiwiLabel: UILabel!
-    @IBOutlet weak var mangoLabel: UILabel!
+    // MARK: - @IBOutlets
+    @IBOutlet private weak var strawberryLabel: UILabel!
+    @IBOutlet private weak var bananaLabel: UILabel!
+    @IBOutlet private weak var pineappleLabel: UILabel!
+    @IBOutlet private weak var kiwiLabel: UILabel!
+    @IBOutlet private weak var mangoLabel: UILabel!
     
-    @IBOutlet weak var orderStrawberryBananaJuiceButton: OrderJuiceButton!
-    @IBOutlet weak var orderStrawberryJuiceButton: OrderJuiceButton!
-    @IBOutlet weak var orderBananaJuiceButton: OrderJuiceButton!
-    @IBOutlet weak var orderPineappleJuiceButton: OrderJuiceButton!
-    @IBOutlet weak var orderMangoKiwiJuiceButton: OrderJuiceButton!
-    @IBOutlet weak var orderKiwiJuiceButton: OrderJuiceButton!
-    @IBOutlet weak var orderMangoJuiceButton: OrderJuiceButton!
+    @IBOutlet private weak var orderStrawberryBananaJuiceButton: OrderJuiceButton!
+    @IBOutlet private weak var orderStrawberryJuiceButton: OrderJuiceButton!
+    @IBOutlet private weak var orderBananaJuiceButton: OrderJuiceButton!
+    @IBOutlet private weak var orderPineappleJuiceButton: OrderJuiceButton!
+    @IBOutlet private weak var orderMangoKiwiJuiceButton: OrderJuiceButton!
+    @IBOutlet private weak var orderKiwiJuiceButton: OrderJuiceButton!
+    @IBOutlet private weak var orderMangoJuiceButton: OrderJuiceButton!
     var juiceMaker = JuiceMaker()
     
-    //MARK: - LifeCycles
+    // MARK: - LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeButtons()
@@ -35,9 +35,10 @@ class MainViewController: UIViewController {
         updateFruitCount()
     }
     
-    //MARK: - @IBActions
-    @IBAction func moveStock(_ sender: Any) {
-        guard let stockVC = self.storyboard?.instantiateViewController(identifier: "stockVC") as? StockManagementViewController else {
+    // MARK: - @IBActions
+    @IBAction private func moveStock(_ sender: Any) {
+        guard let stockVC = self.storyboard?
+                .instantiateViewController(identifier: "stockVC") as? StockManagementViewController else {
             return
         }
         
@@ -45,7 +46,7 @@ class MainViewController: UIViewController {
         self.present(stockVC, animated: false, completion: nil)
     }
     
-    @IBAction func orderJuice(_ sender: OrderJuiceButton) {
+    @IBAction private func orderJuice(_ sender: OrderJuiceButton) {
         guard let juice = sender.juice else {
             return
         }
@@ -55,7 +56,7 @@ class MainViewController: UIViewController {
         updateFruitCount()
     }
 
-    //MARK: - Methods
+    // MARK: - Methods
     private func initializeButtons() {
         orderStrawberryJuiceButton.juice = .strawberry
         orderBananaJuiceButton.juice = .banana
@@ -76,7 +77,7 @@ class MainViewController: UIViewController {
     }
 }
 
-    //MARK: - SendDataProtocol
+    // MARK: - SendDataProtocol
 extension MainViewController: SendDataProtocol {
     func sendData(strawberry: Int, banana: Int, pineapple: Int, kiwi: Int, mango: Int) {
         FruitStock.shared.addStock(of: .strawberry, count: strawberry)
@@ -86,6 +87,4 @@ extension MainViewController: SendDataProtocol {
         FruitStock.shared.addStock(of: .mango, count: mango)
         updateFruitCount()
     }
-    
-    
 }
