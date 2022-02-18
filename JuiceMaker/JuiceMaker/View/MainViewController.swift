@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var orderMangoKiwiJuiceButton: OrderJuiceButton!
     @IBOutlet private weak var orderKiwiJuiceButton: OrderJuiceButton!
     @IBOutlet private weak var orderMangoJuiceButton: OrderJuiceButton!
-    var juiceMaker = JuiceMaker()
+    var juiceMaker: JuiceMakerBusinessLogic = JuiceMaker()
     
     // MARK: - LifeCycles
     override func viewDidLoad() {
@@ -80,11 +80,11 @@ class MainViewController: UIViewController {
     // MARK: - SendDataProtocol
 extension MainViewController: SendDataProtocol {
     func sendData(strawberry: Int, banana: Int, pineapple: Int, kiwi: Int, mango: Int) {
-        FruitStock.shared.addStock(of: .strawberry, count: strawberry)
-        FruitStock.shared.addStock(of: .banana, count: banana)
-        FruitStock.shared.addStock(of: .pineapple, count: pineapple)
-        FruitStock.shared.addStock(of: .kiwi, count: kiwi)
-        FruitStock.shared.addStock(of: .mango, count: mango)
+        juiceMaker.addStock(of: .strawberry, count: strawberry)
+        juiceMaker.addStock(of: .banana, count: banana)
+        juiceMaker.addStock(of: .pineapple, count: pineapple)
+        juiceMaker.addStock(of: .kiwi, count: kiwi)
+        juiceMaker.addStock(of: .mango, count: mango)
         updateFruitCount()
     }
 }

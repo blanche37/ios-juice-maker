@@ -6,18 +6,35 @@
 
 import Foundation
 
-struct JuiceMaker {
+protocol JuiceMakerBusinessLogic {
+    func makeJuice(using juice: Juice) throws
+    func readStock(of fruit: Fruit) -> Int
+    func addStock(of fruit: Fruit, count: Int)
+}
+
+struct JuiceMaker: JuiceMakerBusinessLogic {
     func makeJuice(using juice: Juice) throws {
         for (ingredient, information) in juice.recipe {
-            guard FruitStock.shared.readCount(of: ingredient) >=  information else {
-                throw JuiceMakerError.outOfStock
-            }
+            guard let stock = FruitStock.shared.remainedFruit[ingredient],
+                  stock >= information else {
+                      throw JuiceMakerError.outOfStock
+                  }
             
-            FruitStock.shared.subtractStock(of: ingredient, count: information)
+            FruitStock.shared.remainedFruit[ingredient] = stock - information
         }
     }
     
     func readStock(of fruit: Fruit) -> Int {
-        return FruitStock.shared.readCount(of: fruit)
+        if let storedFruit = FruitStock.shared.remainedFruit[fruit] {
+            return storedFruit
+        } else {
+            return 0
+        }
+    }
+    
+    func addStock(of fruit: Fruit, count: Int) {
+        if let storedFruit = FruitStock.shared.remainedFruit[fruit] {
+            FruitStock.shared.remainedFruit[fruit] = storedFruit + count
+        }
     }
 }
