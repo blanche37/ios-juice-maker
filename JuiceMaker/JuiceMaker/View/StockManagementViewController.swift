@@ -22,7 +22,7 @@ class StockManagementViewController: UIViewController {
     @IBOutlet private weak var mangoLabel: UILabel!
     
     // MARK: - Properties
-    weak var delegate: SendDataProtocol?
+    var viewModel: ViewModel?
     
     // MARK: - LifeCycles
     override func viewDidLoad() {
@@ -32,14 +32,28 @@ class StockManagementViewController: UIViewController {
     
     // MARK: - @IBActions
     @IBAction private func touchUpClosedButton(_ sender: Any) {
-        guard let strawberry = strawberryLabel.text.flatMap({ Int($0) }),
-              let banana = bananaLabel.text.flatMap({ Int($0) }),
-              let pineapple = pineappleLabel.text.flatMap({ Int($0) }),
-              let kiwi = kiwiLabel.text.flatMap({ Int($0) }),
-              let mango = mangoLabel.text.flatMap({ Int($0) }) else {
+        guard let addStrawberry = strawberryLabel.text.flatMap({ Int($0) }),
+              let addBanana = bananaLabel.text.flatMap({ Int($0) }),
+              let addPineapple = pineappleLabel.text.flatMap({ Int($0) }),
+              let addKiwi = kiwiLabel.text.flatMap({ Int($0) }),
+              let addMango = mangoLabel.text.flatMap({ Int($0) }) else {
                   return
               }
-        self.delegate?.sendData(strawberry: strawberry, banana: banana, pineapple: pineapple, kiwi: kiwi, mango: mango)
+        
+        guard let strawberry = viewModel?.fruitStock.value[.strawberry],
+              let banana = viewModel?.fruitStock.value[.banana],
+              let pineapple = viewModel?.fruitStock.value[.pineapple],
+              let kiwi = viewModel?.fruitStock.value[.kiwi],
+              let mango = viewModel?.fruitStock.value[.mango] else {
+            return
+        }
+        
+        viewModel?.fruitStock.value[.strawberry] = strawberry + addStrawberry
+        viewModel?.fruitStock.value[.banana] = banana + addBanana
+        viewModel?.fruitStock.value[.pineapple] = pineapple + addPineapple
+        viewModel?.fruitStock.value[.kiwi] = kiwi + addKiwi
+        viewModel?.fruitStock.value[.mango] = mango + addMango
+        
         self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     

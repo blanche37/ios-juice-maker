@@ -251,7 +251,7 @@
                         <outlet property="orderStrawberryBananaJuiceButton" destination="LCV-M7-W1O" id="yoo-0T-2Vz"/>
                         <outlet property="orderStrawberryJuiceButton" destination="cK8-og-7fr" id="Hrf-Yo-Daf"/>
                         <outlet property="pineappleLabel" destination="Um5-92-aTG" id="EMc-Ca-bG4"/>
-                        <outlet property="strawberryLabel" destination="ddR-gt-XFN" id="GAc-HW-gc4"/>
+                        <outlet property="strawberryLabel" destination="ddR-gt-XFN" id="2g8-RP-nEb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

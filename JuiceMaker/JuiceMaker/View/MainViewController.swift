@@ -15,24 +15,21 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var kiwiLabel: UILabel!
     @IBOutlet private weak var mangoLabel: UILabel!
     
-    @IBOutlet private weak var orderStrawberryBananaJuiceButton: OrderJuiceButton!
-    @IBOutlet private weak var orderStrawberryJuiceButton: OrderJuiceButton!
-    @IBOutlet private weak var orderBananaJuiceButton: OrderJuiceButton!
-    @IBOutlet private weak var orderPineappleJuiceButton: OrderJuiceButton!
-    @IBOutlet private weak var orderMangoKiwiJuiceButton: OrderJuiceButton!
-    @IBOutlet private weak var orderKiwiJuiceButton: OrderJuiceButton!
-    @IBOutlet private weak var orderMangoJuiceButton: OrderJuiceButton!
-    var juiceMaker: JuiceMakerBusinessLogic = JuiceMaker()
+    @IBOutlet private weak var orderStrawberryBananaJuiceButton: UIButton!
+    @IBOutlet private weak var orderStrawberryJuiceButton: UIButton!
+    @IBOutlet private weak var orderBananaJuiceButton: UIButton!
+    @IBOutlet private weak var orderPineappleJuiceButton: UIButton!
+    @IBOutlet private weak var orderMangoKiwiJuiceButton: UIButton!
+    @IBOutlet private weak var orderKiwiJuiceButton: UIButton!
+    @IBOutlet private weak var orderMangoJuiceButton: UIButton!
+    
+    // MARK: - Properties
+    var viewModel: ViewModel!
     
     // MARK: - LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeButtons()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateFruitCount()
+        bind()
     }
     
     // MARK: - @IBActions
@@ -42,49 +39,62 @@ class MainViewController: UIViewController {
             return
         }
         
-        stockVC.delegate = self
+        stockVC.viewModel = self.viewModel
         self.present(stockVC, animated: false, completion: nil)
     }
     
-    @IBAction private func orderJuice(_ sender: OrderJuiceButton) {
-        guard let juice = sender.juice else {
-            return
-        }
+    @IBAction private func orderJuice(_ sender: UIButton) {
+        let alertController = OrderAlertController()
         
-        let alert = sender.make(using: juice)
-        self.present(alert, animated: true, completion: nil)
-        updateFruitCount()
-    }
-
-    // MARK: - Methods
-    private func initializeButtons() {
-        orderStrawberryJuiceButton.juice = .strawberry
-        orderBananaJuiceButton.juice = .banana
-        orderStrawberryBananaJuiceButton.juice = .strawberryBanana
-        orderKiwiJuiceButton.juice = .kiwi
-        orderMangoJuiceButton.juice = .mango
-        orderMangoKiwiJuiceButton.juice = .mangokiwi
-        orderPineappleJuiceButton.juice = .pineapple
+        switch sender {
+        case orderStrawberryBananaJuiceButton:
+            viewModel.makeJuice(juice: .strawberryBanana) {
+                let alert = alertController.showAlert(isSuccess: $0, juice: .strawberryBanana)
+                self.present(alert, animated: false)
+            }
+        case orderStrawberryJuiceButton:
+            viewModel.makeJuice(juice: .strawberry) {
+                let alert = alertController.showAlert(isSuccess: $0, juice: .strawberry)
+                self.present(alert, animated: false)
+            }
+        case orderBananaJuiceButton:
+            viewModel.makeJuice(juice: .banana) {
+                let alert = alertController.showAlert(isSuccess: $0, juice: .banana)
+                self.present(alert, animated: false)
+            }
+        case orderPineappleJuiceButton:
+            viewModel.makeJuice(juice: .pineapple) {
+                let alert = alertController.showAlert(isSuccess: $0, juice: .pineapple)
+                self.present(alert, animated: false)
+            }
+        case orderMangoKiwiJuiceButton:
+            viewModel.makeJuice(juice: .mangokiwi) {
+                let alert = alertController.showAlert(isSuccess: $0, juice: .mangokiwi)
+                self.present(alert, animated: false)
+            }
+        case orderKiwiJuiceButton:
+            viewModel.makeJuice(juice: .kiwi) {
+                let alert = alertController.showAlert(isSuccess: $0, juice: .kiwi)
+                self.present(alert, animated: false)
+            }
+        case orderMangoJuiceButton:
+            viewModel.makeJuice(juice: .mango) {
+                let alert = alertController.showAlert(isSuccess: $0, juice: .mango)
+                self.present(alert, animated: false)
+            }
+        default:
+            break
+        }
     }
     
-    private func updateFruitCount() {
-        strawberryLabel.text = String(juiceMaker.readStock(of: .strawberry))
-        bananaLabel.text = String(juiceMaker
-                                    .readStock(of: .banana))
-        kiwiLabel.text = String(juiceMaker.readStock(of: .kiwi))
-        pineappleLabel.text = String(juiceMaker.readStock(of: .pineapple))
-        mangoLabel.text = String(juiceMaker.readStock(of: .mango))
-    }
-}
-
-    // MARK: - SendDataProtocol
-extension MainViewController: SendDataProtocol {
-    func sendData(strawberry: Int, banana: Int, pineapple: Int, kiwi: Int, mango: Int) {
-        juiceMaker.addStock(of: .strawberry, count: strawberry)
-        juiceMaker.addStock(of: .banana, count: banana)
-        juiceMaker.addStock(of: .pineapple, count: pineapple)
-        juiceMaker.addStock(of: .kiwi, count: kiwi)
-        juiceMaker.addStock(of: .mango, count: mango)
-        updateFruitCount()
+    // MARK: - Methods
+    private func bind() {
+        viewModel.fruitStock.bind { fruitStock in
+            self.strawberryLabel.text = String(fruitStock[Fruit.strawberry]!)
+            self.bananaLabel.text = String(fruitStock[Fruit.banana]!)
+            self.pineappleLabel.text = String(fruitStock[Fruit.pineapple]!)
+            self.kiwiLabel.text = String(fruitStock[Fruit.kiwi]!)
+            self.mangoLabel.text = String(fruitStock[Fruit.mango]!)
+        }
     }
 }
